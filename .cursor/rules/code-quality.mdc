@@ -1,0 +1,14 @@
+---
+description: ESLint, Prettier, TypeScript, and Git hook expectations
+alwaysApply: true
+---
+
+# Code Quality
+
+- Match Prettier (single quotes, trailing commas, printWidth 100, Tailwind class sorting).
+- Keep TypeScript strict; avoid `any` — prefer `unknown` + narrowing.
+- Unused args/vars must be prefixed with `_`.
+- Prefer named exports from features; route files may default-export re-exports.
+- Run through Husky: `pre-commit` (lint-staged) and `commit-msg` (Conventional Commits).
+- Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`.
+- Do not disable lint rules casually; fix the underlying issue.

@@ -1,0 +1,17 @@
+---
+description: Expo starter architecture, folder layout, and stack conventions
+alwaysApply: true
+---
+
+# Project Architecture
+
+- Expo SDK **58** + Expo Router (`src/app`) + TypeScript strict + NativeWind 4.
+- Package manager is **pnpm**. Use `pnpm add` / `pnpm install`; do not introduce npm lockfiles.
+- Path aliases: `@/*` → `src/*`, `@/assets/*` → `assets/*`.
+- Feature-first: domain code in `src/features/<name>`, shared kernel in `src/shared`.
+- Routes in `src/app` stay thin (re-export screens / layouts only).
+- Providers order in root layout: Theme → I18n → Dialog → Auth → navigation.
+- Prefer existing UI primitives (`Button`, `Input`, `FormInput`, `Dialog`, `Screen`, `Header`).
+- Forms: `react-hook-form` + Zod factories that accept `t` for i18n messages.
+- Do not add Redux/Zustand unless explicitly requested; Context is the default.
+- Read Expo docs for v58 before using APIs: https://docs.expo.dev/versions/v58.0.0/

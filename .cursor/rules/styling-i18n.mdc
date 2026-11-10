@@ -1,0 +1,19 @@
+---
+description: NativeWind theme tokens and EN/AR i18n + RTL rules
+globs: src/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Styling & i18n
+
+## Styling
+- Use NativeWind `className` with semantic colors (`bg-background`, `text-foreground`, `bg-accent`, …).
+- Theme tokens live in `src/shared/theme/tokens.ts` and map to CSS vars in `vars.ts`.
+- Compose classes with `cn()` from `@/shared/lib/cn`.
+- Prefer CVA variants for reusable interactive components (see `Button`).
+
+## i18n
+- All user-facing strings go through `useTranslation()` / `t('…')`.
+- Add keys to both `locales/en.ts` and `locales/ar.ts` (AR must satisfy `Translations`).
+- RTL is handled by `I18nProvider` + `applyLanguageDirection` — use logical spacing (`ms`/`me`/`ps`/`pe`) when possible.
+- Never hardcode English-only UI copy in screens.

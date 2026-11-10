@@ -1,0 +1,96 @@
+{
+  "expo": {
+    "name": "قارئ فواتير زاتكا",
+    "slug": "zatca-qr",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "zatcaqr",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "icon": "./assets/images/icon.png",
+      "infoPlist": {
+        "ExpoLocalization_supportsRTL": true,
+        "CFBundleLocalizations": [
+          "en",
+          "ar"
+        ],
+        "NSCameraUsageDescription": "يستخدم قارئ فواتير زاتكا الكاميرا لمسح رمز الفاتورة الإلكترونية.",
+        "NSPhotoLibraryUsageDescription": "يستخدم قارئ فواتير زاتكا الصور لقراءة رمز الفاتورة الإلكترونية."
+      },
+      "bundleIdentifier": "com.seqagroup.zatcaqr"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0B3D3A",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.seqagroup.zatcaqr",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-localization",
+        {
+          "supportsRTL": true,
+          "allowDynamicLocaleChangesAndroid": true,
+          "supportedLocales": [
+            "en",
+            "ar"
+          ]
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0B3D3A",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 220,
+          "resizeMode": "contain"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "يستخدم قارئ فواتير زاتكا الكاميرا لمسح رمز الفاتورة الإلكترونية.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "يستخدم قارئ فواتير زاتكا الصور لقراءة رمز الفاتورة الإلكترونية."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "supportsRTL": true,
+      "eas": {
+        "projectId": "9f5d2ddb-1c04-4734-80fc-b620a11f5f9e"
+      }
+    }
+  }
+}
